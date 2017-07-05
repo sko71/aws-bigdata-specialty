@@ -34,7 +34,7 @@ CREATE TABLE lineitem_nocomp
 	
 -- Load data into tables without compression, distribution style or sort keys:
 
-copy orders_nocomp from 's3://your bucket/redshiftdata/orders.manifest' iam_role 'arn:aws:iam::your account number:role/your role' delimiter '|' manifest;
-copy lineitem_nocomp from 's3://your bucket/redshiftdata/lineitem.manifest' iam_role 'arn:aws:iam::your account number:role/your role' delimiter '|' manifest;
+copy orders_nocomp from 's3://your bucket/redshiftdata/orders.manifest' iam_role 'arn:aws:iam::your account number:role/your role' delimiter '|' manifest compupdate off;
+copy lineitem_nocomp from 's3://your bucket/redshiftdata/lineitem.manifest' iam_role 'arn:aws:iam::your account number:role/your role' delimiter '|' manifest compupdate off;
 
 

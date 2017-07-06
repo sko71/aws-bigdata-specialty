@@ -103,7 +103,7 @@ CREATE TABLE lineitem_comp
 	l_shipmode CHAR(10) NOT NULL,
 	l_comment VARCHAR(44) NOT NULL);
 	
--- Load data into tables without compression, distribution style or sort keys:
+-- Load data into tables WITH compression, NO distribution style or sort keys:
 
 copy orders_nocomp from 's3://your bucket/redshiftdata/orders.manifest' iam_role 'arn:aws:iam::your account number:role/your role' delimiter '|' manifest;
 copy lineitem_nocomp from 's3://your bucket/redshiftdata/lineitem.manifest' iam_role 'arn:aws:iam::your account number:role/your role' delimiter '|' manifest;

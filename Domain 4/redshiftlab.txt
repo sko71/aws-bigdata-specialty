@@ -139,7 +139,7 @@ GROUP BY
 ORDER BY
     l_shipmode;
     
--- Create tables WITH compression, distribution style or sort keys:
+-- Create tables WITH compression, distribution style and sort keys:
 
 CREATE TABLE orders
 (
@@ -183,13 +183,13 @@ SORTKEY
 );
 
 
--- Load data into tables WITH compression, distribution style or sort keys:
+-- Load data into tables WITH compression, distribution style and sort keys:
 
 copy orders from 's3://your bucket/redshiftdata/orders.manifest' iam_role 'arn:aws:iam::your account number:role/your role' delimiter '|' manifest;
 copy lineitem from 's3://your bucket/redshiftdata/lineitem.manifest' iam_role 'arn:aws:iam::your account number:role/your role' delimiter '|' manifest;
 
 
--- Query for tables WITH compression, distribution style or sort keys:
+-- Query for tables WITH compression, distribution style and sort keys:
 
 SELECT
     l_shipmode,

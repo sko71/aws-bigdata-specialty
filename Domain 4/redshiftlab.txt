@@ -54,8 +54,8 @@ SELECT
         else 0
     end) AS low_line_count
 FROM
-    orders_no_comp,
-    lineitemno_comp
+    orders_nocomp,
+    lineitem_nocomp
 WHERE
     o_orderkey = l_orderkey
     AND l_shipmode in ('AIR', 'SHIP')
